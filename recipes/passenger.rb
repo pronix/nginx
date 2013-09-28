@@ -15,7 +15,7 @@
 # limitations under the License.
 #
 
-packages = value_for_platform( ["redhat", "centos", "scientific", "amazon", "oracle"] => {
+packages = value_for_platform( ["redhat", "centos", "scientific", "amazon", "oracle","fedora"] => {
                                  "default" => %w(ruby-devel curl-devel) },
                                ["ubuntu", "debian"] => {
                                  "default" => %w(ruby-dev libcurl4-gnutls-dev) } )
