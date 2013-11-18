@@ -42,7 +42,7 @@ include_recipe 'nginx::commons_dir'
 include_recipe 'nginx::commons_script'
 include_recipe 'build-essential::default'
 
-src_filepath  = "#{Chef::Config['file_cache_path'] || '/tmp'}/nginx-#{node['nginx']['source']['version']}.tar.gz"
+src_filepath  = "#{Chef::Config['file_cache_path'] || '/var/tmp'}/nginx-#{node['nginx']['source']['version']}.tar.gz"
 packages = value_for_platform_family(
   %w[rhel fedora] => %w[pcre-devel openssl-devel],
   %w[gentoo]      => [],
