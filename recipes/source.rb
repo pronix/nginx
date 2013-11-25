@@ -58,7 +58,7 @@ remote_file nginx_url do
   checksum node['nginx']['source']['checksum']
   path src_filepath
   backup false
-  not_if { File.exists?('/etc/init.d/nginx') }
+  not_if { File.exists?(src_filepath) }
 end
 
 node.run_state['nginx_force_recompile'] = false
