@@ -25,7 +25,7 @@ packages = value_for_platform( ["redhat", "centos", "scientific", "amazon", "ora
                                  "default" => %w(ruby-devel curl-devel) }
                              )
 
-packages.split(',').each do |name|
+packages.each do |name|
   package name
 end
 
