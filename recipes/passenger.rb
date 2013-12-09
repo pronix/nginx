@@ -20,9 +20,12 @@
 packages = value_for_platform( ["redhat", "centos", "scientific", "amazon", "oracle","fedora"] => {
                                  "default" => %w(ruby-devel curl-devel) },
                                ["ubuntu", "debian"] => {
-                                 "default" => %w(ruby-dev libcurl4-gnutls-dev) } )
+                                 "default" => %w(ruby-dev libcurl4-gnutls-dev) },
+                               ["default","linux"] => {
+                                 "default" => %w(ruby-devel curl-devel) }
+                             )
 
-packages.each do |name|
+packages.split(',').each do |name|
   package name
 end
 
