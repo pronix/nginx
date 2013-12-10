@@ -99,7 +99,7 @@ bash 'compile_nginx_source' do
   cwd  ::File.dirname(src_filepath)
   code <<-EOH
    source /usr/local/rvm/scripts/rvm
-   rvm use ruby
+   rvm use ruby-2.0.0
     cd nginx-#{node['nginx']['source']['version']} &&
     ./configure #{node.run_state['nginx_configure_flags'].join(" ")} &&
     make && make install
