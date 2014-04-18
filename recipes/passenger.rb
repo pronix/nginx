@@ -24,9 +24,17 @@ packages = value_for_platform( ["redhat", "centos", "scientific", "amazon", "ora
                                ["default","linux"] => {
                                  "default" => %w(ruby-devel curl-devel) }
                              )
+=begin
+packages = value_for_platform_family(
+  %w(rhel)   => node['nginx']['passenger']['packages']['rhel'],
+  %w(debian) => node['nginx']['passenger']['packages']['debian']
+)
+=end
 
-packages.each do |name|
-  package name
+unless packages.empty?
+  packages.each do |name|
+    package name
+  end
 end
 
 gem_package 'rake'
